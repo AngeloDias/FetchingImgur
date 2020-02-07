@@ -8,9 +8,9 @@ import org.json.JSONArray
 import org.json.JSONObject
 import java.io.IOException
 
-class FetchImagesViewModel() : ViewModel() {
+class FetchImagesViewModel : ViewModel() {
     private var httpClient: OkHttpClient? = null
-    private lateinit var photos: ObservableArrayList<Photo>
+    lateinit var requestedPhotos: ObservableArrayList<Photo>
     private var request: Request
 
     init {
@@ -32,7 +32,6 @@ class FetchImagesViewModel() : ViewModel() {
             override fun onResponse(call: Call, response: Response) {
                 val data = JSONObject(response.body()!!.string())
                 val items: JSONArray = data.getJSONArray("data")
-                val requestedPhotos: ObservableArrayList<Photo> = ObservableArrayList()
 
                 for(i in 0..items.length()){
                     val item = items.getJSONObject(i)
@@ -52,5 +51,7 @@ class FetchImagesViewModel() : ViewModel() {
             }
         })
     }
+
+    fun selectImage(pos: Int, som: Int) {}
 
 }

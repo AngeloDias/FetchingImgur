@@ -9,9 +9,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    }
-
-    private fun initBind() {
 //        DataBindingUtil.setContentView(this, R.layout.main_activity)
     }
 

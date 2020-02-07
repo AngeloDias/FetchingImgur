@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
@@ -13,6 +14,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
-        android:padding="32dp" />
+        app:columnCount="4"
+        app:rowCount="4"
+        android:padding="32dp">
+
+        <ImageView
+            android:id="@+id/imgCat1"
+            android:src="@{fetchImagesViewModel.selectImage(0)}"
+            app:layout_columnWeight="1"
+            android:contentDescription="@string/imgCatDescription"/>
+
+        <ImageView
+            android:id="@+id/imgCat2"
+            android:src="@{fetchImagesViewModel.selectImage(1)}"
+            app:layout_columnWeight="1"
+            android:contentDescription="@string/imgCatDescription"/>
+
+        <ImageView
+            android:id="@+id/imgCat3"
+            android:src="@{fetchImagesViewModel.selectImage(2)}"
+            app:layout_columnWeight="1"
+            android:contentDescription="@string/imgCatDescription"/>
+
+        <ImageView
+            android:id="@+id/imgCat4"
+            android:src="@{fetchImagesViewModel.selectImage(3)}"
+            app:layout_gravity="center_horizontal"
+            android:contentDescription="@string/imgCatDescription"/>
+    </GridLayout>
 
 </layout>
